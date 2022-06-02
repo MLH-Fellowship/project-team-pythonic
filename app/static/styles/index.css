@@ -1,0 +1,73 @@
+p, h1, h2, h3, h4, h5, h6, button {
+    font-family: "Roboto", serif;
+}
+
+#herofont {
+    text-align: center;
+    font-size: 100px;
+    color: #DAC611;
+}
+
+#herosubfont {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(30, 30, 30)
+}
+
+#pythonic_color{
+    color: #115ED1;
+}
+
+body {
+    background-color: #bbe3ff;
+    background-image: linear-gradient(to right, #2D7DF4 , #EDD500);
+    background-size: cover;
+    width: auto; 
+    overflow-x: hidden;
+    font-family: "Roboto", serif;
+    margin: 0px;
+}
+
+.hero_header{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+.hero_header:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bottom_hero{
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+.bottom_hero:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile_icon img{
+    height: 220px;
+    width: 220px;
+    border: 7px solid white;
+    border-radius: 50%;
+}
+
+.profile_icon:hover img{
+    border-color: #115ED1;
+    transition: .6s;
+}
+
+.member1 {
+    float: right;
+}
+
+.member2 {
+    float: left;
+}
