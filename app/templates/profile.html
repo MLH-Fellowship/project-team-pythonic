@@ -26,33 +26,27 @@
         </div>
         <nav class="nav" id="nav">
           <ul>
-            <li><a href="#">Juan</a></li>
-            <li><a href="#">Hanna</a></li>
-            <li><a href="#">Emilie</a></li>
-            <li><a href="#">Emily</a></li>
+            <li><a href="/profile/hanna">Hanna</a></li>
+            <li><a href="/profile/emilie">Emilie</a></li>
+            <li><a href="/profile/emily">Emily</a></li>
+            <li><a href="/profile/juan">Juan</a></li>
           </ul>
         </nav>
       </div>
 
       <div class="menu-bg" id="menu-bg"></div>
-      <h1>Hanna Gersten</h1>
+      <h1>{{ info['name'] }}</h1>
       <div class="pic">
         <img
           class="img-raised rounded-circle img-fluid"
-          src="/Users/hannahgersten/Library/Mobile Documents/com~apple~CloudDocs/MLHFellowship/Portfolio/project-team-pythonic/app/static/img/B423896F-3839-47F4-A251-A8BE38D29449.png"
+          src="../static/img/{{ name }}.png"
         />
       </div>
       <div class="About-me">
         <div class="card">
-          <div class="card-header">About me</div>
+          <div class="card-header">About {{ name|capitalize }}</div>
           <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-              </footer>
-            </blockquote>
+              <p class="lead">{{ info['about'] }}</p>
           </div>
         </div>
       </div>
@@ -60,13 +54,12 @@
         <div class="card">
           <div class="card-header">Projects</div>
           <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-              </footer>
-            </blockquote>
+            {% for project in info['projects'] %}
+            <h5 class="card-title">{{ project['projName'] }}</h5>
+            <p class="card-text">
+              {{ project['projDesc'] }}
+            </p>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -74,11 +67,12 @@
         <div class="card border-light mb-3" style="max-width: 18rem">
           <div class="card-header">Where I've Been</div>
           <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
+            {% for place in info['places'] %}
+            <h5 class="card-title">{{ place }}</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{ place }} coordinates to be loaded into JS array.
             </p>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -86,11 +80,12 @@
         <div class="card border-light mb-3" style="max-width: 18rem">
           <div class="card-header">Experience</div>
           <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
+            {% for experience in info['experience'] %}
+            <h5 class="card-title">{{ experience['expName'] }}</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{ experience['expDesc'] }}
             </p>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -98,7 +93,12 @@
         <div class="card border-light mb-3" style="max-width: 875px">
           <div class="card-header">Hobbies</div>
           <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
+            {% for hobby in info['hobbies'] %}
+            <h5 class="card-title">{{ hobby['hobbyName'] }}</h5>
+            <p class="card-text">
+              {{ hobby['hobbyDesc'] }}
+            </p>
+            {% endfor %}
           </div>
         </div>
       </div>
