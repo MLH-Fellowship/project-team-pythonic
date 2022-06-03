@@ -88,8 +88,15 @@
             <div class="card-header">Hobbies</div>
             <div class="card-body">
               {% for hobby in info['hobbies'] %}
-              <h5 class="card-title">{{ hobby['hobbyName'] }}</h5>
-              <p class="card-text">{{ hobby['hobbyDesc'] }}</p>
+                <h5 class="card-title">{{ hobby['hobbyName'] }}</h5>
+                <span class="tooltips tooltip-effect-1">
+                  <span class="tooltip-image">
+                    <img src="../static/img/{{ hobby['hobbyName'] }}.png"/>
+                  </span>
+                  <span class="tooltip-content clearfix">
+                    <span class="tooltip-text">{{ hobby['hobbyDesc'] }}</span>
+                  </span>
+                </span>
               {% endfor %}
             </div>
           </div>
