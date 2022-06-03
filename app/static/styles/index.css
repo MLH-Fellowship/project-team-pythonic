@@ -79,6 +79,10 @@ body {
     clear: both;
 }
 
+.profile_icon {
+    visibility: hidden;
+}
+
 .profile_icon img {
     height: 20vh;
     min-width: 20vh;
@@ -103,12 +107,25 @@ body {
     margin: 1rem;
 }
 
+.bubble-up {
+    animation: bubble-up 1s 1 ease-out forwards;
+	visibility: visible;
+}
+
+.float-around {
+	animation: float-around 6s ease-in-out infinite;
+}
+
+.img-thumbnail {
+    animation: float-around 6s ease-in-out infinite;
+}
+
 @keyframes bubble-up {
     0% {
         transform: scale(0);
     }
 
-    70% {
+    80% {
         transform: scale(1.2);
     }
 
@@ -117,3 +134,17 @@ body {
     }
 }
 
+@keyframes float-around {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
