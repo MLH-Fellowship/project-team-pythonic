@@ -4,7 +4,6 @@
     --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
 
-
 p,
 h1,
 h2,
@@ -33,10 +32,11 @@ button {
 }
 
 body {
-    background-color: #bbe3ff;
-    background-image: linear-gradient(to right, #2D7DF4, #EDD500);
+    background: url("../img/pythonic-bg.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    width: auto;
     overflow-x: hidden;
     font-family: "Roboto", serif;
     margin: 0px;
@@ -84,8 +84,8 @@ body {
 }
 
 .profile_icon img {
-    height: 20vh;
-    min-width: 20vh;
+    height: 30vh;
+    min-width: 30vh;
     border: 7px solid white;
     border-radius: 50%;
 }
