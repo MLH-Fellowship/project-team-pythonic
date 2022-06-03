@@ -1,8 +1,16 @@
 :root {
     --fs-xl: clamp(0.3rem, 11vw, 6rem);
+    --fs-xxl: clamp(0.5rem, 13vw, 9rem);
     /* will not shrink less than 5rem, max of 12rem */
     --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
+
+@font-face {
+    font-family: 'Flux';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/flux-regular.otf') format('opentype');
+  }
 
 p,
 h1,
@@ -17,8 +25,7 @@ button {
 
 #herofont {
     text-align: center;
-    font-size: var(--fs-xl);
-    color: #DAC611;
+    font-size: var(--fs-xxl);
 }
 
 #herosubfont {
@@ -27,8 +34,29 @@ button {
     color: rgb(30, 30, 30)
 }
 
+h1 {
+    font-family: 'Flux', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0px 5px 0px #b2a98f,
+                 0px 9px 7px rgba(0,0,0,0.15),
+                 0px 12px 1px rgba(0,0,0,0.1),
+                 0px 24px 20px rgba(0,0,0,0.1);
+    color: white;
+}
+
 #pythonic_color {
-    color: #115ED1;
+}
+
+.fader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+	animation: fade-in 1s ease-in-out forwards;
+    pointer-events: none;
 }
 
 body {
@@ -131,6 +159,15 @@ body {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        background: rgba(0,0,0,1);
+    }
+    100% {
+        background: rgba(0,0,0,0);
     }
 }
 
