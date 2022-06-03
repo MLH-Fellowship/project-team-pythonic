@@ -1,4 +1,6 @@
 body {
+    max-width: 100%;
+    overflow-x: hidden;
     padding: 0px;
     margin-left: 0px;
     background: #9796f0;
