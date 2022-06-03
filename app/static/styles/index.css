@@ -1,16 +1,23 @@
+:root {
+    --fs-xl: clamp(0.3rem, 12vw + 1rem, 7rem);
+    /* will not shrink less than 5rem, max of 12rem */
+    --fs-600: clamp(0.2rem, 12vw + 1rem, 3rem);
+}
+
+
 p, h1, h2, h3, h4, h5, h6, button {
     font-family: "Roboto", serif;
 }
 
 #herofont {
     text-align: center;
-    font-size: 100px;
+    font-size: var(--fs-xl);
     color: #DAC611;
 }
 
 #herosubfont {
     text-align: center;
-    font-size: 40px;
+    font-size: var(--fs-600);
     color: rgb(30, 30, 30)
 }
 
