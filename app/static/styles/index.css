@@ -1,16 +1,23 @@
+:root {
+    --fs-xl: clamp(0.3rem, 11vw, 6rem);
+    /* will not shrink less than 5rem, max of 12rem */
+    --fs-600: clamp(0.2rem, 5vw, 3rem);
+}
+
+
 p, h1, h2, h3, h4, h5, h6, button {
     font-family: "Roboto", serif;
 }
 
 #herofont {
     text-align: center;
-    font-size: 100px;
+    font-size: var(--fs-xl);
     color: #DAC611;
 }
 
 #herosubfont {
     text-align: center;
-    font-size: 40px;
+    font-size: var(--fs-600);
     color: rgb(30, 30, 30)
 }
 
@@ -32,6 +39,13 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding-top: 2%;
+    padding-bottom: 2vw;
+}
+
+@media (max-width:991px){
+    .hero_header{
+        padding-bottom: 10vw;
+    }
 }
 
 .hero_header:after{
@@ -44,6 +58,12 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding-top: 2%;
+}
+
+@media (max-width:991px){
+    .bottom_hero{
+        padding-top: 10vw;
+    }
 }
 
 .bottom_hero:after{
