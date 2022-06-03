@@ -67,15 +67,15 @@
         <div class="card border-light mb-3" style="max-width: 18rem">
           <div class="card-header">Where I've Been</div>
           <div class="card-body">
-            {% for place in info['places'] %}
-            <!-- <h5 class="card-title">{{ place }}</h5> -->
+            <!-- {% for place in info['places'] %}
+            <h5 class="card-title">{{ place }}</h5>
             <p class="card-text">
               {{ place }} coordinates to be loaded into JS array.
             </p>
-            {% endfor %}
-            <div id="googleMap" style="width:100%; height:400px;"></div>
+            {% endfor %} -->
+            <div id="googleMap" style="width:250px; height:250px;"></div>
             <script src="../static/scripts/maps.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu2gJmCunZ8xGsSsQNbkN2iXHev_NkTP8&callback=profileMap"></script>            
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu2gJmCunZ8xGsSsQNbkN2iXHev_NkTP8&callback=profileMap"></script> 
           </div>
         </div>
       </div>
