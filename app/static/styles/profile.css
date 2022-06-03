@@ -162,19 +162,3 @@ body {
     left: 50px;
     max-width: 875px; 
 }
-
-.projects .card{
-    height: 275px;
-}
-
-.hobbies .card {
-    height: 100px;
-}
-
-.experience .card{
-    height: 250px;
-}
-
-.map .card{
-    height: 250px;
-}
