@@ -31,7 +31,15 @@ button {
 #herosubfont {
     text-align: center;
     font-size: var(--fs-600);
-    color: rgb(27, 46, 74)
+    color: rgb(27, 46, 74);
+    visibility: hidden;
+    font-family: 'Roboto', serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+#subfont-container {
+    height: var(--fs-600);
 }
 
 h1 {
@@ -42,9 +50,6 @@ h1 {
                  0px 12px 1px rgba(0,0,0,0.1),
                  0px 24px 20px rgba(0,0,0,0.1);
     color: white;
-}
-
-#pythonic_color {
 }
 
 .fader {
@@ -140,6 +145,11 @@ body {
 	visibility: visible;
 }
 
+.fade-in-and-drop {
+    animation: fade-in-and-drop 1s ease-out forwards;
+    visibility: visible !important;
+}
+
 .float-around {
 	animation: float-around 6s ease-in-out infinite;
 }
@@ -183,5 +193,16 @@ body {
     100% {
         box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
         transform: translatey(0px);
+    }
+}
+
+@keyframes fade-in-and-drop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
