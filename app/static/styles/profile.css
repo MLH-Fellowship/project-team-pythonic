@@ -99,12 +99,12 @@ body {
 
 .change-bg {
     width: 520px;
-    height: 460px;
+    height: 500px;
     transform: translate(65%, -40%);
 }
 
 .img-raised {
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, .24), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .24), 0 5px 5px -5px rgba(0, 0, 0, .2);
 }
 .rounded-circle {
     border-radius: 50%;

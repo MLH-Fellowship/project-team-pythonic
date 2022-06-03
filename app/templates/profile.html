@@ -15,8 +15,8 @@
   </head>
   <body>
     <div class="container">
-      <div id="menu">
-        <div id="menu-bar" onclick="menuOnClick()">
+      <div id="menu" onclick="menuOnClick()">
+        <div id="menu-bar">
           <div id="bar1" class="bar"></div>
           <div id="bar2" class="bar"></div>
           <div id="bar3" class="bar"></div>
@@ -27,6 +27,7 @@
             <li><a href="/profile/emilie">Emilie</a></li>
             <li><a href="/profile/emily">Emily</a></li>
             <li><a href="/profile/juan">Juan</a></li>
+            <li><a href="/">Back</a></li>
           </ul>
         </nav>
       </div>
@@ -45,16 +46,16 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="row">
-            <div class="col col-lg-4">
+            <div class="col col-lg-4 align-self-center">
               <div class="img-responsive">
                 <img
                   class="img-raised rounded-circle img-fluid"
                   src="../static/img/{{ name }}.png"
                 />
+                <h1 class="name mb-3">{{ info['name'] }}</h1>
               </div>
-              <h1 class="name mb-3">{{ info['name'] }}</h1>
             </div>
-            <div class="col col-lg-8">
+            <div class="col col-lg-8 pl-0">
               <div class="about-me mb-3" style="min-width: 17rem;">
                 <div class="card">
                   <div class="card-header">About {{ name|capitalize }}</div>
