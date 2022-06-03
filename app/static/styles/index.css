@@ -1,5 +1,5 @@
 :root {
-    --fs-xl: clamp(0.3rem, 12vw, 7rem);
+    --fs-xl: clamp(0.3rem, 11vw, 6rem);
     /* will not shrink less than 5rem, max of 12rem */
     --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
@@ -39,6 +39,13 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding-top: 2%;
+    padding-bottom: 2vw;
+}
+
+@media (max-width:991px){
+    .hero_header{
+        padding-bottom: 10vw;
+    }
 }
 
 .hero_header:after{
@@ -51,6 +58,12 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding-top: 2%;
+}
+
+@media (max-width:991px){
+    .bottom_hero{
+        padding-top: 10vw;
+    }
 }
 
 .bottom_hero:after{
