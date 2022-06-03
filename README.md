@@ -1,13 +1,31 @@
-# Production Engineering - Week 1
-## TEAM PYTHONIC Portfolio Site
+## PE Track: Week 1 - TEAM PYTHONIC - Portfolio Site
 
 # Introduction
+TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fellowship. For week 1, an interactive team portfolio was made with an enjoyable user interface and a variety of multimedia components. The purpose of the project was to explore new technologies in web development and using the best practices to collaborate as a team on Github.
 
 # Description
+Team Pythonic's portfolio website consists of two main components:
+###### Landing page
+- Profile pictures of each member which lead to their respective profile pages
+###### Profile page
+Cards with relevant profile sections, including:
+- About me
+- Experience
+- Projects
+- Countries I've visited: Interactive Google maps with markers of locations a member has visited
+
+###### Additional features
+- Responsive website that adjusts according to screen size and works on mobile screens
+- Animated menu bar leading to corresponding pages
 
 # Visuals
 
 # Technologies used in the project
+- The python microframework Flask
+- HTML/CSS and Bootstrap
+- Jinja and json to parse through data
+- Javascript for the menu dropdown
+- Google Maps API to mark locations visited in each profile page
 
 ## Installation
 
