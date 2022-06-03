@@ -19,6 +19,11 @@ Cards with relevant profile sections, including:
 - Animated menu bar leading to corresponding pages
 
 # Visuals
+##### Landing page
+![image](https://user-images.githubusercontent.com/68432655/171937584-8402240d-0e30-409d-9e6f-db7849bef31d.png)
+
+##### Profile page
+TODO: insert a screenshot of profile page here
 
 # Technologies used in the project
 - The python microframework Flask
