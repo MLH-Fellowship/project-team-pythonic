@@ -1,7 +1,7 @@
 :root {
-    --fs-xl: clamp(0.3rem, 12vw + 1rem, 7rem);
+    --fs-xl: clamp(0.3rem, 12vw, 7rem);
     /* will not shrink less than 5rem, max of 12rem */
-    --fs-600: clamp(0.2rem, 12vw + 1rem, 3rem);
+    --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
 
 
