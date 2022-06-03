@@ -1,12 +1,27 @@
-body {
+.hanna {
     padding: 0px;
     margin-left: 0px;
-    background: #9796f0;
+    /* background: #9796f0;
     /* fallback for old browsers */
-    background-image: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);
+    /* background-image: -webkit-linear-gradient(to right, #fbc7d4, #9796f0); */
     /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to right, #fbc7d4, #9796f0);
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0); 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.juan {
+    padding: 0px;
+    margin-left: 0px;
+    background-image: linear-gradient(to right, #402ded, #9cd7f7);
+}
+.emily {
+    padding: 0px;
+    margin-left: 0px;
+    background-image: linear-gradient(to right, #f3a7db, #d7b4f3);
+}
+.emilie{
+    padding: 0px;
+    margin-left: 0px;
+    background-image: linear-gradient(to right, #8e9aaf, #cbc0d3);
 }
 #menu {
     z-index: 2;
