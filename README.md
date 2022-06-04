@@ -15,6 +15,7 @@ Cards with relevant profile sections, including:
 - Experience
 - Projects
 - Countries I've visited: Interactive Google maps with markers of locations a member has visited
+- Hobbies: Hover effect tooltip boxes with more information
 
 ###### Additional features
 - Landing page css animations when user hovers over main text
@@ -24,9 +25,6 @@ Cards with relevant profile sections, including:
 # Visuals
 ##### Landing page
 ![image](https://user-images.githubusercontent.com/68432655/171975341-1461f565-c145-4f11-a82a-af86d4897b87.png)
-
-##### Profile page
-TODO: insert a screenshot of profile page here
 
 # Technologies used in the project
 - The python microframework Flask
@@ -71,7 +69,7 @@ You should get a response like this in the terminal:
 
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
+*Note: For now, the portfolio site will only work on your local machine while you have it running inside of your terminal. We plan to host it in the cloud in the next few weeks!* 
 
 ## Contributing
 
