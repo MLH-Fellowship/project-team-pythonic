@@ -1,3 +1,4 @@
+// Loads the Google Map onto profile
 function profileMap() {
     var mapProp = { // map view begins zoomed out
       center: new google.maps.LatLng(0, 0),
