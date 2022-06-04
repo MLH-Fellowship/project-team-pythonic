@@ -156,10 +156,10 @@ body {
 .tooltips .tooltip-content {
     position: absolute;
     z-index: 999;
-    width: 360px;
-    left: 50%;
-    margin: 0 0 20px -180px;
+    width: 400px;
+    margin: 0 0 0 -265px;
     bottom: 100%;
+    left: 50%;
     text-align: left;
     font-size: 15px;
     line-height: 30px;
