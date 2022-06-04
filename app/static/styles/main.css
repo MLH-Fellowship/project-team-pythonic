@@ -56,6 +56,10 @@ body {
     margin-bottom: 50px;
 }
 
+.profile_icon {
+    margin: 1rem;
+}
+
 .profile h1 {
         font-size: 50px;
         font-weight: 700;
