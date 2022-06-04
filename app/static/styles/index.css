@@ -1,85 +1,129 @@
 :root {
     --fs-xl: clamp(0.3rem, 11vw, 6rem);
+    --fs-xxl: clamp(0.5rem, 13vw, 9rem);
     /* will not shrink less than 5rem, max of 12rem */
     --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
 
+@font-face {
+    font-family: 'Flux';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/flux-regular.otf') format('opentype');
+  }
 
-p, h1, h2, h3, h4, h5, h6, button {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
     font-family: "Roboto", serif;
 }
 
 #herofont {
     text-align: center;
-    font-size: var(--fs-xl);
-    color: #DAC611;
+    font-size: var(--fs-xxl);
 }
 
 #herosubfont {
     text-align: center;
     font-size: var(--fs-600);
-    color: rgb(30, 30, 30)
+    color: rgb(27, 46, 74);
+    visibility: hidden;
+    font-family: 'Roboto', serif;
+    font-weight: 300;
+    margin: 0;
 }
 
-#pythonic_color{
-    color: #115ED1;
+#subfont-container {
+    height: var(--fs-600);
+}
+
+h1 {
+    font-family: 'Flux', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0px 5px 0px #b2a98f,
+                 0px 9px 7px rgba(0,0,0,0.15),
+                 0px 12px 1px rgba(0,0,0,0.1),
+                 0px 24px 20px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.fader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+	animation: fade-in 1s ease-in-out forwards;
+    pointer-events: none;
 }
 
 body {
-    background-color: #bbe3ff;
-    background-image: linear-gradient(to right, #2D7DF4 , #EDD500);
+    background: url("../img/pythonic-bg.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    width: auto; 
     overflow-x: hidden;
     font-family: "Roboto", serif;
     margin: 0px;
 }
 
-.hero_header{
+.hero_header {
     max-width: 1300px;
     margin: 0 auto;
-    padding-top: 2%;
-    padding-bottom: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
-@media (max-width:991px){
-    .hero_header{
+@media (max-width:991px) {
+    .hero_header {
         padding-bottom: 10vw;
     }
 }
 
-.hero_header:after{
+.hero_header:after {
     content: "";
     display: block;
     clear: both;
 }
 
-.bottom_hero{
+.bottom_hero {
     max-width: 900px;
     margin: 0 auto;
     padding-top: 2%;
 }
 
-@media (max-width:991px){
-    .bottom_hero{
+@media (max-width:991px) {
+    .bottom_hero {
         padding-top: 10vw;
     }
 }
 
-.bottom_hero:after{
+.bottom_hero:after {
     content: "";
     display: block;
     clear: both;
 }
 
-.profile_icon img{
-    height: 220px;
-    width: 220px;
+.profile_icon {
+    visibility: hidden;
+}
+
+.profile_icon img {
+    height: 30vh;
+    min-width: 30vh;
     border: 7px solid white;
     border-radius: 50%;
 }
 
-.profile_icon:hover img{
+.profile_icon:hover img {
     border-color: #115ED1;
     transition: .6s;
 }
@@ -90,4 +134,75 @@ body {
 
 .member2 {
     float: left;
+}
+
+.profile_icon {
+    margin: 1rem;
+}
+
+.bubble-up {
+    animation: bubble-up 1s 1 ease-out forwards;
+	visibility: visible;
+}
+
+.fade-in-and-drop {
+    animation: fade-in-and-drop 1s ease-out forwards;
+    visibility: visible !important;
+}
+
+.float-around {
+	animation: float-around 6s ease-in-out infinite;
+}
+
+.img-thumbnail {
+    animation: float-around 6s ease-in-out infinite;
+}
+
+@keyframes bubble-up {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        background: rgba(0,0,0,1);
+    }
+    100% {
+        background: rgba(0,0,0,0);
+    }
+}
+
+@keyframes float-around {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
+
+@keyframes fade-in-and-drop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
