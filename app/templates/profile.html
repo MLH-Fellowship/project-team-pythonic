@@ -11,9 +11,10 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
+    <!-- {% block wallpaper -%} {{ info['color'] }} {%- endblock %} -->
     <link rel="stylesheet" href="../static/styles/profile.css" />
   </head>
-  <body>
+  <body class="{{ name}}">
   <div class="container">
     <div id="menu" onclick="menuOnClick()">
       <div id="menu-bar">

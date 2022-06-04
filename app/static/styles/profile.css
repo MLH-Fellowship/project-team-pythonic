@@ -1,3 +1,4 @@
+
 body {
     max-width: 100%;
     overflow-x: hidden;
@@ -10,6 +11,23 @@ body {
     background-image: linear-gradient(to right, #fbc7d4, #9796f0);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.hanna {
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0); 
+}
+.juan {
+    background-image: linear-gradient(to right, #402ded, #9cd7f7);
+}
+.emily {
+    background-image: linear-gradient(to right, #f3a7db, #d7b4f3);
+}
+.emilie{
+    background-image: linear-gradient(to right, #8e9aaf, #cbc0d3);
+}
+#menu {
+    z-index: 2;
+    cursor: pointer;
+}
+
 #menu {
     z-index: 2;
     cursor: pointer;
@@ -108,6 +126,7 @@ body {
 .img-raised {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .24), 0 5px 5px -5px rgba(0, 0, 0, .2);
 }
+
 .rounded-circle {
     border-radius: 50%;
     margin: auto;
@@ -123,24 +142,26 @@ body {
 .projects {
     /* position: fixed; */
     top: 280px;
-    
+
     max-width: 875px;
 }
-.experience{
+
+.experience {
     /* position: fixed; */
     margin: auto;
 }
+
 .map {
     /* position: fixed; */
     top: 375px;
     right: 50px;
 }
 
-.hobbies{
+.hobbies {
     /* position: fixed; */
     bottom: 5px;
     left: 50px;
-    max-width: 875px; 
+    max-width: 875px;
 }
 
 .lead {
