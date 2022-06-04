@@ -6,6 +6,8 @@ TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fello
 
 ## Badges
 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MLH-Fellowship/project-team-pythonic)
+![GitHub repo size](https://img.shields.io/github/repo-size/MLH-Fellowship/project-team-pythonic)
 
 ## Description
 
@@ -52,6 +54,7 @@ Cards with relevant profile sections, including:
 ```
 main
 │   README.md
+|   LICENSE.md
 │   .gitignore
 |   .python-version
 |   example.env
