@@ -6,6 +6,8 @@ TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fello
 # Description
 Team Pythonic's portfolio website consists of two main components:
 ###### Landing page
+- Big hero text to display Team name
+- Medium subhero text to display Team info
 - Profile pictures of each member which lead to their respective profile pages
 ###### Profile page
 Cards with relevant profile sections, including:
@@ -15,12 +17,13 @@ Cards with relevant profile sections, including:
 - Countries I've visited: Interactive Google maps with markers of locations a member has visited
 
 ###### Additional features
+- Landing page css animations when user hovers over main text
 - Responsive website that adjusts according to screen size and works on mobile screens
 - Animated menu bar leading to corresponding pages
 
 # Visuals
 ##### Landing page
-![image](https://user-images.githubusercontent.com/68432655/171937584-8402240d-0e30-409d-9e6f-db7849bef31d.png)
+![image](https://user-images.githubusercontent.com/68432655/171975341-1461f565-c145-4f11-a82a-af86d4897b87.png)
 
 ##### Profile page
 TODO: insert a screenshot of profile page here
