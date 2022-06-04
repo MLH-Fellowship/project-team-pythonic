@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
+os.getenv("API_KEY")
+
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
@@ -17,7 +19,7 @@ def profile(name):
     info = data[name]
     # todo check if name exists
     print(info)
-    return render_template('profile.html', name=name, info=info, url=os.getenv("URL"))
+    return render_template('profile.html', name=name, info=info, url=os.getenv("URL"), API_KEY=os.getenv("API_KEY"))
 
 
 def load_profiles_from_json(filename) -> dict:

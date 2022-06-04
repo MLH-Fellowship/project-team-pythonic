@@ -1,6 +1,15 @@
-body{
+
+body {
     max-width: 100%;
     overflow-x: hidden;
+    padding: 0px;
+    margin-left: 0px;
+    background: #9796f0;
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .hanna {
     background-image: linear-gradient(to right, #fbc7d4, #9796f0); 
