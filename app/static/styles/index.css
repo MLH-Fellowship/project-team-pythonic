@@ -1,7 +1,7 @@
 :root {
-    --fs-xl: clamp(0.3rem, 11vw, 6rem);
-    --fs-xxl: clamp(0.5rem, 13vw, 9rem);
-    /* will not shrink less than 5rem, max of 12rem */
+    --fs-xl: clamp(0.3rem, 9vw, 4rem);
+    --fs-xxl: clamp(0.5rem, 12vw, 8rem);
+    /* will not shrink less than 0.5rem, max of 8rem */
     --fs-600: clamp(0.2rem, 5vw, 3rem);
 }
 
@@ -79,7 +79,6 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding-top: 2vh;
-    padding-bottom: 2vh;
 }
 
 @media (max-width:991px) {
@@ -97,7 +96,7 @@ body {
 .bottom_hero {
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 2%;
+    padding-top: 5vh;
 }
 
 @media (max-width:991px) {
@@ -117,8 +116,8 @@ body {
 }
 
 .profile_icon img {
-    height: 30vh;
-    min-width: 30vh;
+    height: clamp(0.2rem, 28vh, 30vh);
+    min-width: clamp(0.2rem, 28vh, 30vh);
     border: 7px solid white;
     border-radius: 50%;
 }
