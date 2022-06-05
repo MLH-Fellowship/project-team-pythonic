@@ -2,7 +2,7 @@
 
 ## Introduction
 
-TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fellowship. For week 1, an interactive team portfolio was made with an enjoyable user interface and a variety of multimedia components. The purpose of the project was to explore new technologies in web development and using the best practices to collaborate as a team on Github.
+TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fellowship. For week 1, an interactive team portfolio was made with an enjoyable user interface and a variety of multimedia components. The purpose of the project was to explore new technologies in web development and use the best practices to collaborate as a team on GitHub.
 
 ## Badges
 
@@ -43,10 +43,10 @@ Cards with relevant profile sections, including:
 
 ## Technologies used in the project
 
-- The python microframework Flask
+- The Python microframework Flask
 - HTML/CSS and Bootstrap
-- Jinja and json to parse through data
-- Javascript for the menu dropdown
+- Jinja and JSON to parse through data
+- JavaScript for the menu dropdown and map creation
 - Google Maps API to mark locations visited in each profile page
 
 ## File Structure
