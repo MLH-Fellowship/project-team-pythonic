@@ -1,3 +1,6 @@
+:root {
+    --fs-xl: clamp(0.3rem, 2vw, 1.25rem);
+}
 
 body {
     max-width: 100%;
@@ -142,6 +145,11 @@ body {
 .img-thumbnail {
     max-height: 35vh;
     min-width: 26vh;
+}
+
+.card-header{
+    font-size: var(--fs-xl);
+    text-align: center;
 }
 
 .projects {
