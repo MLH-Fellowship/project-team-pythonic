@@ -2,7 +2,9 @@
 
 ## Introduction
 
-TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fellowship. For week 1, an interactive team portfolio was made with an enjoyable user interface and a variety of multimedia components. The purpose of the project was to explore new technologies in web development and use the best practices to collaborate as a team on GitHub.
+TEAM PYTHONIC is from Pod 22.SUM.21 of the Production Engineering Track at MLH Fellowship.  
+
+For week 1, we made a reusable, modular and interactive team portfolio with an enjoyable user interface and a variety of multimedia components. We explored new technologies in Web Development (Flask, Jinja, Google Maps API), learned GitHub best practices to collaborate as a team, and also learned to write more modular, scalable and well-documented code.
 
 ## Badges
 
@@ -12,14 +14,15 @@ TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fello
 
 ## Description
 
+This is a reusable portfolio template which can be easily adapted to any number of team members. It is also mobile-friendly, which is an important feature considering that 50%+ of traffic on the web comes from mobile devices.
+
 Team Pythonic's portfolio website consists of two main components:
 
 ###### Landing page
 
 - Animated heading text to display team name
 - Medium subheading, animated text to display team info
-- Profile pictures of each member which lead to their respective profile pages
-
+- Profile pictures of each member which leads to their respective profile pages
 
 ###### Profile page
 
@@ -27,14 +30,14 @@ Cards with relevant profile sections, including:
 - About me
 - Experience
 - Projects
-- Countries I've visited: Interactive Google maps with markers of locations a member has visited
-- Hobbies: Hover effect tooltip boxes with more information
+- Countries I've visited: Interactive Google Map with markers of locations each member has visited
+- Hobbies: Hover effect tooltip boxes which display more information
 
 ###### Additional features
 
 - Landing page with pop-up CSS animations when user hovers over main text
-- Responsive website that adjusts according to screen size and works on mobile screens
-- Animated menu bar leading to corresponding pages
+- Fully responsive website that adjusts according to screen size and works on mobile screens
+- Animated menu bar for switching profiles
 
 ## Visuals
 
@@ -46,45 +49,46 @@ Cards with relevant profile sections, including:
 
 - The Python microframework Flask
 - HTML/CSS and Bootstrap
-- Jinja and JSON to parse through data
+- Jinja for templating (injecting Python code into HTML)
+- JSON for storing our data
 - JavaScript for the menu dropdown and map creation
-- Google Maps API to mark locations visited in each profile page
+- Google Maps API in JavaScript to mark locations visited in each profile page
 
 ## File Structure
 
 ```
 main
-│   README.md
-|   LICENSE.md
-│   .gitignore
-|   .python-version
-|   example.env
-|   requirements.txt
-|   data.json
+│   README.md                               # You're reading this now!
+|   LICENSE.md                              # Details of this project's MIT license
+│   .gitignore                              # Files to be ignored by git
+|   .python-version                         # Python version used to build the project
+|   example.env                             # An example of what your .env should look like
+|   requirements.txt                        # Requirements for Python dependencies to install using pip
+|   data.json                               # Database containing info to be loaded into the app
 │
 └───app
-    │   __init__.py
+    │   __init__.py                         # The Python init file that runs upon executing "flask run"
     │
     └───static
     |   └───fonts
-    |   |   |   flux-regular.otf
+    |   |   |   flux-regular.otf            # The same font style used by Python (free to use)
     |   |
     |   └───img
-    |   |   |   (all images for website)
+    |   |   |   (all images for website)    # Various images used in the project
     |   |
     |   └───scripts
-    |   |   |   index.js
-    |   |   |   maps.js
-    |   |   |   profile.js
+    |   |   |   index.js                    # Script containing animation triggers for the landing page
+    |   |   |   maps.js                     # Script that loads the Google Maps API into the DOM
+    |   |   |   profile.js                  # Script containing animation trigger for the hamburger menu
     |   |
     |   └───styles
-    |   |   |   index.css
-    |   |   |   maps.css
-    |   |   |   profile.css
+    |   |   |   index.css                   # Styles and animations for the landing page
+    |   |   |   maps.css                    # Styles for the Google Map on profile page
+    |   |   |   profile.css                 # Styles for static components on profile page
     |
     └───templates
-        |   index.html
-        |   profile.html
+        |   index.html                      # Template for the landing page
+        |   profile.html                    # Template for the profile page
         
 ```
 
@@ -106,9 +110,9 @@ pip install -r requirements.txt
 
 ## Usage
 
-Create a .env file using the example.env template (make a copy using the variables inside of the template)
+Create a .env file using the example.env template (make a copy of the file, then replace the values if required)
 
-*Note: Also make sure to add an API_KEY in the .env file in order to use Google Maps section in the website*
+*Note: Add your own Google Maps API key in the .env file in order to use the map functionality*
 
 Start flask development server
 ```bash
@@ -157,6 +161,11 @@ Note: Our team has ensured that we created an issue for each task, we used a new
 - [x] Add a template for adding multiple work experiences/education/hobbies using [Jinja](https://jinja.palletsprojects.com/en/3.0.x/api/#basics)
 - [x] Create a new page to display hobbies.
 - [x] Add a menu bar that dynamically displays other pages in the app
+
+## Acknowledgements
+- [Google Maps API](https://developers.google.com/maps)
+- [Bootstrap](https://getbootstrap.com)
+- [FontsGeek](https://fontsgeek.com)
 
 ## Authors
 * Emilie Zhang ([EmilieYZhang](https://github.com/EmilieYZhang))
