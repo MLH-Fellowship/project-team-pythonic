@@ -153,18 +153,19 @@ body {
     margin: auto;
 }
 
-
 .tooltips {
     display: inline-block;
     position: relative;
     z-index: 999;
 }
+
 .tooltips .tooltip-image img {
     position: relative;
     height: 100px;
     margin-right: 1em;
     border-radius: 3px;
 }
+
 .tooltips .tooltip-content {
     position: absolute;
     z-index: 999;
@@ -183,6 +184,7 @@ body {
     cursor: default;
     pointer-events: none;
 }
+
 .tooltips .tooltip-content::after {
     content: "";
     top: 100%;
@@ -196,7 +198,9 @@ body {
     border-width: 10px;
     margin-left: -10px;
 }
-.tooltips:hover .tooltip-content {
+
+.tooltips:hover .tooltip-content,
+.tooltips:active .tooltip-content {
     pointer-events: auto;
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
