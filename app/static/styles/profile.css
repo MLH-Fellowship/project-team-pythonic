@@ -168,8 +168,8 @@ body {
 .tooltips .tooltip-content {
     position: absolute;
     z-index: 999;
-    width: 400px;
-    margin: 0 0 0 -265px;
+    width: 320px;
+    margin: 0 0 0 -225px;
     bottom: 100%;
     left: 100%;
     text-align: left;
@@ -202,12 +202,23 @@ body {
     -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
     transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
 }
-.tooltips .tooltip-text {
+
+.tooltips .tooltip-desc {
     font-size: 15px;
     line-height: 24px;
     text-align: center;
     display: block;
-    padding: 2em 2em 2em 2em;
+    padding: 1em;
+    color: #ffffff;
+}
+
+.tooltips .tooltip-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    display: block;
+    padding: 0.5rem;
     color: #ffffff;
 }
 
