@@ -8,6 +8,7 @@ TEAM PYTHONIC is from 22.SUM.21 of the Production Engineering Track at MLH Fello
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MLH-Fellowship/project-team-pythonic)
 ![GitHub repo size](https://img.shields.io/github/repo-size/MLH-Fellowship/project-team-pythonic)
+![GitHub](https://img.shields.io/github/license/MLH-Fellowship/project-team-pythonic)
 
 ## Description
 
@@ -152,7 +153,7 @@ Note: Our team has ensured that we created an issue for each task, we used a new
 - [x] Add a map of all the cool locations/countries you visited
 
 ### Flask Tasks
-- [x] Get your Flask app running locally on your machine using the instructions below.
+- [x] Get your Flask app running locally on your machine using the instructions.
 - [x] Add a template for adding multiple work experiences/education/hobbies using [Jinja](https://jinja.palletsprojects.com/en/3.0.x/api/#basics)
 - [x] Create a new page to display hobbies.
 - [x] Add a menu bar that dynamically displays other pages in the app
