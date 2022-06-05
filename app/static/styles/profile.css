@@ -243,3 +243,16 @@ body {
     height: 40vh;
     border-radius: 3px;
 }
+
+.fa {
+    position: relative;
+    font-size: 30px;
+    padding-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+.fa:hover {
+    opacity: 0.7;
+    color: #ffffff;
+}

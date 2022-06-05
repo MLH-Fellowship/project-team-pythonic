@@ -13,6 +13,7 @@
     />
     <!-- {% block wallpaper -%} {{ info['color'] }} {%- endblock %} -->
     <link rel="stylesheet" href="../static/styles/profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="{{ name}}">
   <div class="container">
@@ -58,7 +59,12 @@
         
         <!-- About Section -->
         <div class="about-me mb-3" style="min-width: 17rem;">
-          <p class="lead">{{ info['about'] }}</p>
+          <p class="lead">
+            {{ info['about'] }}
+            {% for link in info['links'] %}
+              <a href="{{ link['url'] }}" target="_blank" rel="noopener noreferrer" class="fa fa-{{ link['urlName'] }}"></a>
+            {% endfor %}
+          </p>
         </div>
       </div>
     </div>
