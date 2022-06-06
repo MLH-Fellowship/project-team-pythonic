@@ -154,9 +154,10 @@
             <div class="card-footer text-muted">
               <!-- List all countries -->
               {% for places in info['places'] %}
-              <p class="card-text" style="display:inline">{{ places['country'] }}, </p>
               {% if loop.last%}
               <p class="card-text" style="display:inline">{{ places['country'] }} </p>
+              {% else %}
+              <p class="card-text" style="display:inline">{{ places['country'] }}, </p>
               {% endif %}
               {% endfor %}
               <br>
