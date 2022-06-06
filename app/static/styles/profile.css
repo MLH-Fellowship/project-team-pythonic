@@ -1,3 +1,6 @@
+:root {
+    --fs-xl: clamp(0.3rem, 2vw, 1.25rem);
+}
 
 body {
     max-width: 100%;
@@ -25,7 +28,7 @@ body {
 }
 
 .emilie {
-    background-image: linear-gradient(to right, #8e9aaf, #cbc0d3);
+    background-image: linear-gradient(to right, #ECE5C7, #C2DED1);
 }
 
 #menu {
@@ -142,6 +145,11 @@ body {
 .img-thumbnail {
     max-height: 35vh;
     min-width: 26vh;
+}
+
+.card-header{
+    font-size: var(--fs-xl);
+    text-align: center;
 }
 
 .projects {
