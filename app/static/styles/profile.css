@@ -11,18 +11,23 @@ body {
     background-image: linear-gradient(to right, #fbc7d4, #9796f0);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .hanna {
-    background-image: linear-gradient(to right, #fbc7d4, #9796f0); 
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0);
 }
+
 .juan {
     background-image: linear-gradient(to right, #402ded, #9cd7f7);
 }
+
 .emily {
     background-image: linear-gradient(to right, #f3a7db, #d7b4f3);
 }
-.emilie{
+
+.emilie {
     background-image: linear-gradient(to right, #8e9aaf, #cbc0d3);
 }
+
 #menu {
     z-index: 2;
     cursor: pointer;
@@ -140,28 +145,12 @@ body {
 }
 
 .projects {
-    /* position: fixed; */
     top: 280px;
-
     max-width: 875px;
 }
 
 .experience {
-    /* position: fixed; */
     margin: auto;
-}
-
-.map {
-    /* position: fixed; */
-    top: 375px;
-    right: 50px;
-}
-
-.hobbies {
-    /* position: fixed; */
-    bottom: 5px;
-    left: 50px;
-    max-width: 875px;
 }
 
 .tooltips {
@@ -169,17 +158,19 @@ body {
     position: relative;
     z-index: 999;
 }
+
 .tooltips .tooltip-image img {
     position: relative;
     height: 100px;
     margin-right: 1em;
     border-radius: 3px;
 }
+
 .tooltips .tooltip-content {
     position: absolute;
     z-index: 999;
-    width: 400px;
-    margin: 0 0 0 -265px;
+    width: 320px;
+    margin: 0 0 0 -225px;
     bottom: 100%;
     left: 100%;
     text-align: left;
@@ -193,6 +184,7 @@ body {
     cursor: default;
     pointer-events: none;
 }
+
 .tooltips .tooltip-content::after {
     content: "";
     top: 100%;
@@ -206,18 +198,31 @@ body {
     border-width: 10px;
     margin-left: -10px;
 }
-.tooltips:hover .tooltip-content {
+
+.tooltips:hover .tooltip-content,
+.tooltips:active .tooltip-content {
     pointer-events: auto;
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
     transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
 }
-.tooltips .tooltip-text {
+
+.tooltips .tooltip-desc {
     font-size: 15px;
     line-height: 24px;
     text-align: center;
     display: block;
-    padding: 2em 2em 2em 2em;
+    padding: 1em;
+    color: #ffffff;
+}
+
+.tooltips .tooltip-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    display: block;
+    padding: 0.5rem;
     color: #ffffff;
 }
 
