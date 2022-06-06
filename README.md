@@ -43,7 +43,13 @@ Cards with relevant profile sections, including:
 
 ##### Landing page
 
-![image](https://user-images.githubusercontent.com/68432655/171975341-1461f565-c145-4f11-a82a-af86d4897b87.png)
+![Landing Page](https://user-images.githubusercontent.com/68432655/171975341-1461f565-c145-4f11-a82a-af86d4897b87.png)
+
+##### Landing page on mobile
+![Mobile View](https://media3.giphy.com/media/zVBElqBkpg61CXv4ez/giphy.gif?cid=790b7611f18f91cd5142c625c549382215ac1fa7f4af6bfd&rid=giphy.gif&ct=g)
+
+##### Profile page on mobile
+![Profile Mobile View](https://i.imgur.com/XQ8UWGP.png)
 
 ## Technologies used in the project
 
