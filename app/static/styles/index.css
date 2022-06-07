@@ -79,6 +79,7 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding-top: 2vh;
+    text-align: center;
 }
 
 @media (max-width:991px) {
@@ -128,7 +129,7 @@ body {
 }
 
 .member1 {
-    float: right;
+    display: inline-block;
 }
 
 .member2 {
