@@ -7,7 +7,7 @@ load_dotenv()  # Loads the environment variables from the .env file
 
 app = Flask(__name__)  # Initializes a Flask app
 
-os.getenv("API_KEY")  # Obtains the value of the .env variable containing the Google Maps API key
+# os.getenv("API_KEY")  # Obtains the value of the .env variable containing the Google Maps API key
 
 # Route for the landing page
 @app.route('/')
