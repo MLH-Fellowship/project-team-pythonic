@@ -32,11 +32,30 @@ def profile(name):
     else:
         return index()
 
+
+# Route for the projects page
+@app.route('/projects')
+def projects():
+
+    return render_template('projects.html', url=os.getenv("URL"))
+
+# Route for the contact page
+@app.route('/contact')
+def contact():
+
+    return render_template('contact.html', url=os.getenv("URL"))
+
+# Route for the resume page
+@app.route('/resume')
+def resume():
+
+    return render_template('resume.html', url=os.getenv("URL"))
+
 # Route for handling 404 errors
 @app.errorhandler(404)
 def not_found(e):
     """
-    Redirects any invalid URL to the landing page.
+    Serves the projects page.
     """
     return render_template("index.html")
 
