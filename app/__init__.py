@@ -37,7 +37,12 @@ def profile(name):
 @app.route('/projects')
 def projects():
 
-    return render_template('projects.html', url=os.getenv("URL"))
+    data = load_profiles_from_json('projects.json')
+    info1 = data['portfolio']
+    info2 = data['strace']
+    info3 = data['qa']
+    info4 = data['weather']
+    return render_template('projects.html', info1=info1, info2 = info2, info3 = info3, info4= info4,url=os.getenv("URL"))
 
 # Route for the contact page
 @app.route('/contact')
