@@ -606,3 +606,9 @@ strong {
     line-height: 0;
     border-bottom: 2px solid #f7f7f7;
 }
+.embed-responsive-item{
+    width: 100%;
+    height: 500px;
+}
+
+
