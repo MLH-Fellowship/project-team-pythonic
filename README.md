@@ -1,10 +1,10 @@
-# PE Track: Week 2 - Emilie Zhang - Portfolio Site
+# PE Track: Week 1 - TEAM PYTHONIC - Portfolio Site
 
 ## Introduction
 
-As part of TEAM PYTHONIC from Pod 22.SUM.21 of the Production Engineering Track at MLH Fellowship, I have forked our previous project to personalize.
+TEAM PYTHONIC is from Pod 22.SUM.21 of the Production Engineering Track at MLH Fellowship.  
 
-For week 2, I plan to personalize the team portfolio then host it via Digital Ocean with the creation of a droplet.
+For week 1, we made a reusable, modular and interactive team portfolio with an enjoyable user interface and a variety of multimedia components. We explored new technologies in Web Development (Flask, Jinja, Google Maps API), learned GitHub best practices to collaborate as a team, and also learned to write more modular, scalable and well-documented code.
 
 ## Badges
 
