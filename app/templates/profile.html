@@ -96,11 +96,14 @@
           <!-- Projects Box -->
           <div class="projects mb-3">
             <div class="card">
-              <div class="card-header">Projects</div>
+              <div class="card-header">Awards</div>
               <div class="card-body">
-                {% for project in info['projects'] %}
-                <h5 class="card-title">{{ project['projName'] }}</h5>
-                <p class="card-text">{{ project['projDesc'] }}</p>
+                {% for award in info['awards'] %}
+                <h5 class="card-title">{{ award['awdName'] }}</h5>
+                <p class="card-text">{{ award['awdDesc'] }}</p>
+                {% if award['awdUrl']|length %}
+                    <a href="{{award['awdUrl']}}" target="blank"> View PDF</a> 
+                {% endif %}
                 {% endfor %}
               </div>
             </div>
