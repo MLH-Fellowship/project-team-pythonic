@@ -7,14 +7,16 @@ body {
     overflow-x: hidden;
     padding: 0px;
     margin-left: 0px;
-    background-color: #d9e4f5;
-    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+    background: #9796f0;
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .hanna {
-    background-color: #f3e6e8;
-    background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+    background-image: linear-gradient(to right, #fbc7d4, #9796f0);
 }
 
 .juan {
