@@ -88,7 +88,7 @@
                         const formData = new FormData(form); // create new FormData object
                         const payload = new URLSearchParams(formData); // convert object to URL-encoded string
                         // post the payload using Fetch
-                        fetch('http://localhost:5000/api/timeline_post', {
+                        fetch('/api/timeline_post', {
                             method: 'POST',
                             body: payload,
                         }).then(res => res.json())
@@ -115,7 +115,7 @@
                 // create list that is a DocumentFragment
                 const list = document.createDocumentFragment();
                 // returns a Promise
-                fetch('http://localhost:5000/api/timeline_post')
+                fetch('/api/timeline_post')
                     .then((res) => {
                         return res.json(); // convert to JSON data
                     })
