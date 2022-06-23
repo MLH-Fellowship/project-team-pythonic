@@ -15,6 +15,25 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h5 {
+    font-weight: 600;
+    color: #383838;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+textarea {
+    margin-bottom: 10px;
+}
+
 .hanna {
     background-image: linear-gradient(to right, #fbc7d4, #9796f0);
 }
@@ -158,7 +177,7 @@ body {
 }
 
 .experience {
-    margin: auto;
+    margin: 0 0 30px 0;
 }
 
 .tooltips {
