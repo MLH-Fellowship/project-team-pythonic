@@ -1,5 +1,11 @@
 #!/bin/bash
 
-# curl -X POST http://localhost:5000/api/timeline_post -d 'name=Emily&email=emily.lim@wsu.edu&content=Testing POST and GET endpoints!'
+# Tests POST and GET endpoints for timeline posts
 
-curl "http://localhost:5000/api/timeline_post"
+# create a timeline post using POST
+echo "CREATE TIMELINE POST:"
+curl -X POST http://localhost:5000/api/timeline_post -d 'name=Emily&email=emily.lim@wsu.edu&content=Testing POST and GET endpoints!'
+
+# use GET to check that the post was added
+echo "LATEST TIMELINE POST:"
+curl http://localhost:5000/api/timeline_post
