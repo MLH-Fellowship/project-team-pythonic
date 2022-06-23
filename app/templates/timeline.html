@@ -93,8 +93,11 @@
                             body: payload,
                         }).then(res => res.json())
                           .then(data => 
-                            console.log(data));
-                            document.getElementById('form').reset(); // reset form inputs
+                            console.log(data))
+                          .catch(function(error) { // if reject Promise is returned
+                            console.log(error);
+                          });
+                          document.getElementById('form').reset(); // reset form inputs
                     });
                 </script>
             </div>
