@@ -2,10 +2,35 @@ import os
 import json
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+from peewee import *
+import datetime
+from playhouse.shortcuts import model_to_dict
 
 load_dotenv()  # Loads the environment variables from the .env file
 
 app = Flask(__name__)  # Initializes a Flask app
+
+#creates database 
+mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+user=os.getenv("MYSQL_USER"),
+password=os.getenv("MYSQL_PASSWORD"),
+host=os.getenv("MYSQL_HOST"),
+port=3306
+)
+print(mydb)
+
+#creates table for timeline post
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
 
 # os.getenv("API_KEY")  # Obtains the value of the .env variable containing the Google Maps API key
 
@@ -78,3 +103,25 @@ def load_profiles_from_json(filename) -> dict:
     # UTF-8 encoding is used to parse apostrophes correctly
     with open(path, "r", encoding='utf8') as file:
         return json.load(file)
+
+#add POST route for timeline post
+@app.route('/api/timeline_post', methods=['POST'])
+def post_time_line_post():
+    name = request.form['name']
+    email = request.form['email']
+    content = request.form['content']
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+    return model_to_dict(timeline_post)
+
+#create GET endpoint to retrieve timeline posts by create_at descending
+@app.route('/api/timeline_post', methods=['GET'])
+def get_time_line_post():
+    return {
+        'timeline_posts': [
+            model_to_dict(p)
+            for p in
+            TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
+
