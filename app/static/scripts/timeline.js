@@ -1,7 +1,7 @@
 // ul = document.getElementById('timeline-posts');
 // list = document.createDocumentFragment();
 
-fetch('http://127.0.0.1:5000/api/timeline_post')
+fetch('../api/timeline_post')
 .then((response) =>{return response.json()})
 .then(data => {appendData(data)});
 
@@ -43,7 +43,7 @@ form.addEventListener('submit', function(e) {
     data.append("name", document.getElementById("user_name").value);
     data.append("email", document.getElementById("user_email").value);
     data.append("content", document.getElementById("user_content").value);
-    fetch('http://127.0.0.1:5000/api/timeline_post', {
+    fetch('../api/timeline_post', {
     method: 'POST',
     body: data,
     })
