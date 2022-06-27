@@ -81,6 +81,10 @@ def resume():
 
     return render_template('resume.html', url=os.getenv("URL"))
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
 # Route for handling 404 errors
 @app.errorhandler(404)
 def not_found(e):
