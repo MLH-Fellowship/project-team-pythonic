@@ -102,6 +102,14 @@ def get_time_line_post():
         ]
     }
 
+# add DELETE endpoint to delete specific timeline post
+@app.route('/api/timeline_post', methods=['DELETE'])
+def delete_time_line_post():
+    id = request.form['id']
+    delete_post = TimelinePost.delete().where(TimelinePost.id==id)
+    delete_post.execute()
+    return id
+
 # route to the timeline page
 @app.route('/timeline')
 def timeline():
