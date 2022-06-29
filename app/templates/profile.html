@@ -11,7 +11,6 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <!-- {% block wallpaper -%} {{ info['color'] }} {%- endblock %} -->
     <link rel="stylesheet" href="../static/styles/profile.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
@@ -94,13 +93,12 @@
               {% for hobby in info['hobbies'] %}
                 <span class="tooltips clearfix">
                   <span class="tooltip-image">
-                    <img src="../static/img/{{ hobby['hobbyName'] }}.png"/>
+                    <img src="{{ hobby['hobbyImage'] }}"/>
                   </span>
                   <span class="tooltip-content">
                     <span class="tooltip-title">{{ hobby['hobbyName']|capitalize }}</span><span class="tooltip-desc">{{ hobby['hobbyDesc'] }}</span>
                   </span>
                 </span>
-                <!-- <h5 class="card-title">{{ hobby['hobbyName'] }}</h5> -->
               {% endfor %}
             </div>
           </div>
@@ -142,12 +140,9 @@
                 });
               </script>
               {% endfor %}
-              <div id="googleMap">
-              
-              </div>
+              <div id="googleMap"></div>
               <script src="../static/scripts/maps.js"></script>
               <script src="https://maps.googleapis.com/maps/api/js?key={{ API_KEY }}&callback=profileMap"></script>
-
             </div>
             <div class="card-footer text-muted">
               <!-- List all countries -->
