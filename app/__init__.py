@@ -10,13 +10,17 @@ load_dotenv()  # Loads the environment variables from the .env file
 
 app = Flask(__name__)  # Initializes a Flask app
 
-#creates database 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-user=os.getenv("MYSQL_USER"),
-password=os.getenv("MYSQL_PASSWORD"),
-host=os.getenv("MYSQL_HOST"),
-port=3306
-)
+if os.getenv("TESTING") == True:
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    #creates database 
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+    )
 print(mydb)
 
 #creates table for timeline post
@@ -108,16 +112,6 @@ def load_profiles_from_json(filename) -> dict:
     with open(path, "r", encoding='utf8') as file:
         return json.load(file)
 
-#add POST route for timeline post
-@app.route('/api/timeline_post', methods=['POST'])
-def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
-
-    return model_to_dict(timeline_post)
-
 #create GET endpoint to retrieve timeline posts by create_at descending
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -128,4 +122,41 @@ def get_time_line_post():
             TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
+#add POST route for timeline post, DELETE attempt 2
+@app.route('/api/timeline_post', methods=['POST']), #'DELETE'])
+# if request.method =='POST':
+def post_time_line_post():
+    name = request.form['name']
+    email = request.form['email']
+    content = request.form['content']
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+    return model_to_dict(timeline_post)
+# elif request.method =='DELETE':
+#     def delete_time_line_post():
+#         nid = request.form['id']
+#         obj=TimelinePost.get(TimelinePost.id==nid)
+#         obj.delete_instance()
+
+#         return "Done"
+
+# DELETE attempt 3
+# @app.route('/api/timeline_post', methods=['DELETE'])
+# def delete_time_line_post():
+    # nid = request.form['id']
+    # obj=TimelinePost.get(TimelinePost.id==nid)
+    # obj.delete_instance()
+
+    # return "Done"
+
+# Delete attempt 1
+@app.route('/api/timeline_post/<int: nid>', methods=['DELETE'])
+def delete_time_line_post(nid):
+    obj=TimelinePost.get(TimelinePost.id==nid)
+    obj.delete_instance()
+
+    return "Done"
+
+
 
