@@ -72,7 +72,7 @@
             <div class="card-header">Submit a Post</div>
             <div class="card-body" style="text-align: center;">
               <!-- form to be submitted -->
-                <form id="form" onsubmit="setTimeout(function(){ window.location.reload(); }, 500);">
+                <form name="form" id="form" action="#" onsubmit="validInput()" onsubmit="setTimeout(function(){ window.location.reload(); }, 500);">
                     <input name="name" placeholder="Name" type="text"><br>
                     <input name="email" placeholder="Email" type="text"><br>
                     <textarea name="content" placeholder="Content" type="text"></textarea><br>
@@ -80,6 +80,28 @@
                 </form>
 
                 <script>
+/*                     // Check for valid form input
+                    function validInput() {
+                      var nameInput = document.forms["form"]["name"].value;
+                      var emailInput = document.forms["form"]["email"].value;
+                      var contentInput = document.forms["form"]["content"].value;
+                      if (nameInput == "") {
+                        alert("Invalid name");
+                        return false;
+                      }
+                      else if (emailInput == "" || emailInput.indexOf('@') < 0) {
+                        alert("Invalid email");
+                        return false;
+                      }
+                      else if (contentInput == "") {
+                        alert("Invalid content");
+                        return false;
+                      }
+                      else {
+                        return True;
+                      }
+                    } */
+
                     // select HTML form
                     const form = document.getElementById('form');
                     // add submit event listener
