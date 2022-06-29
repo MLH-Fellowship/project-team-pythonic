@@ -124,7 +124,7 @@ def get_time_line_post():
     }
 
 #add POST route for timeline post, DELETE attempt 2
-@app.route('/api/timeline_post', methods=['POST']), #'DELETE'])
+@app.route('/api/timeline_post', methods=['POST']) #'DELETE'])
 # if request.method =='POST':
 def post_time_line_post():
     name = request.form['name']
@@ -151,12 +151,18 @@ def post_time_line_post():
     # return "Done"
 
 # Delete attempt 1
-@app.route('/api/timeline_post/<int: nid>', methods=['DELETE'])
+@app.route('/api/timeline_post/<int:nid>', methods=['DELETE'])
 def delete_time_line_post(nid):
-    obj=TimelinePost.get(TimelinePost.id==nid)
-    obj.delete_instance()
+    try:
+        obj=TimelinePost.get(TimelinePost.id==nid)
+        obj.delete_instance()
+        return get_time_line_post()
+        # return "Done"
+    except TypeError:
+        from traceback import format_exec
+        print(format_exec())
+    # print("deleted result")
 
-    return "Done"
 
 
 
