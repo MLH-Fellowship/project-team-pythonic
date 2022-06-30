@@ -19,6 +19,18 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 )
 print(mydb)
 
+# mydb initialized with temporary in-memory SQLite database for testing
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306
+    )
+
 # ORM model for timeline posts in the portfolio
 class TimelinePost(Model):
     name = CharField()
@@ -84,12 +96,33 @@ def load_profiles_from_json(filename) -> dict:
 # add POST route to add a timeline post
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    try: 
+        # Check if 'name' element exists
+        name = request.form['name']
+    except:
+        # returns error 400
+        return 'Invalid name', 400
+    
+    try:
+        email = request.form['email']
+    except: 
+        return 'Invalid email', 400
 
-    return model_to_dict(timeline_post) # helper method
+    try:
+        content = request.form['content']
+    except:
+        return 'Invalid content', 400
+
+    #checking invalid inputs
+    if len(name) < 1:
+        return "Invalid name", 400
+    elif "@" not in email:
+        return "Invalid email", 400
+    elif len(content) < 1:
+        return "Invalid content", 400
+
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    return model_to_dict(timeline_post)
 
 # add GET endpoint to retrieve all timeline posts
 @app.route('/api/timeline_post', methods=['GET'])
