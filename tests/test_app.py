@@ -19,8 +19,6 @@ class AppTestCase(unittest.TestCase):
         assert '<meta charset="utf-8" />' in html
         assert '<meta property="og:title" content="Personal Portfolio" />' in html
         assert '<meta property="og:description" content="My Personal Portfolio" />' in html
-        assert '<h1 id="herofont"><span id="pythonic_color">EMILY </span>LIM</h1>' in html
-        assert '<h2 id="herosubfont">Aspiring Production Engineer</h2>' in html
     
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
@@ -44,11 +42,14 @@ class AppTestCase(unittest.TestCase):
         assert response.is_json
         json = response.get_json()
         assert "timeline-posts" in json
+
         assert len(json["timeline-posts"]) == 2
 
+        # Checking second_post is correct
         assert json["timeline-posts"][0]['id'] == 2
         assert json["timeline-posts"][0]['name'] == 'Jenn Doe'
 
+        # Checking first_post is correct
         assert json["timeline-posts"][1]['id'] == 1
         assert json["timeline-posts"][1]['name'] == 'Tom Doe'
     

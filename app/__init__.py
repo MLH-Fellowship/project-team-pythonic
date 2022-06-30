@@ -97,8 +97,10 @@ def load_profiles_from_json(filename) -> dict:
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     try: 
+        # Check if 'name' element exists
         name = request.form['name']
     except:
+        # returns error 400
         return 'Invalid name', 400
     
     try:
