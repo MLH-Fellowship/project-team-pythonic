@@ -10,7 +10,7 @@ load_dotenv()  # Loads the environment variables from the .env file
 
 app = Flask(__name__)  # Initializes a Flask app
 
-if os.getenv("TESTING") == True:
+if os.getenv("TESTING") == "true":
     print("Running in test mode")
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
 else:
@@ -127,9 +127,24 @@ def get_time_line_post():
 @app.route('/api/timeline_post', methods=['POST']) #'DELETE'])
 # if request.method =='POST':
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    name = request.form.get('name')
+    email = request.form.get('email')
+    content = request.form.get('content')
+
+    error_message = ""
+
+    if name == None or name == "": 
+        error_message += "Invalid name\n"
+    
+    if email == None or email == "" or (not ("@" in email and ".com" in email)): 
+        error_message += "Invalid email\n"
+    
+    if content == None or content == "": 
+        error_message += "Invalid content\n"
+
+    if error_message != "": 
+        return error_message, 400
+    
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
     return model_to_dict(timeline_post)
@@ -162,11 +177,3 @@ def delete_time_line_post(nid):
         from traceback import format_exec
         print(format_exec())
     # print("deleted result")
-
-# For testing 
-if os.getenv("TESTING") == "true": 
-    print ("Running in testing mode")
-    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
-else: 
-    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"), user=os.getenv("MYSQL_USER"), password=os.getenv("MYSQL_PASSWORD"), host=os.getenv("MYSQL_HOST"), port=3306)
-
