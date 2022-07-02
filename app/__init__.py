@@ -2,12 +2,41 @@ import os
 import json
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+from peewee import *
+import datetime
+from playhouse.shortcuts import model_to_dict
 
 load_dotenv()  # Loads the environment variables from the .env file
 
 app = Flask(__name__)  # Initializes a Flask app
 
-os.getenv("API_KEY")  # Obtains the value of the .env variable containing the Google Maps API key
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    #creates database 
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+    )
+print(mydb)
+
+#creates table for timeline post
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
+
+# os.getenv("API_KEY")  # Obtains the value of the .env variable containing the Google Maps API key
 
 # Route for the landing page
 @app.route('/')
@@ -32,11 +61,39 @@ def profile(name):
     else:
         return index()
 
+
+# Route for the projects page
+@app.route('/projects')
+def projects():
+
+    data = load_profiles_from_json('projects.json')
+    info1 = data['portfolio']
+    info2 = data['strace']
+    info3 = data['qa']
+    info4 = data['weather']
+    return render_template('projects.html', info1=info1, info2 = info2, info3 = info3, info4= info4,url=os.getenv("URL"))
+
+# Route for the contact page
+@app.route('/contact')
+def contact():
+
+    return render_template('contact.html', url=os.getenv("URL"))
+
+# Route for the resume page
+@app.route('/resume')
+def resume():
+
+    return render_template('resume.html', url=os.getenv("URL"))
+
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
 # Route for handling 404 errors
 @app.errorhandler(404)
 def not_found(e):
     """
-    Redirects any invalid URL to the landing page.
+    Serves the projects page.
     """
     return render_template("index.html")
 
@@ -54,3 +111,69 @@ def load_profiles_from_json(filename) -> dict:
     # UTF-8 encoding is used to parse apostrophes correctly
     with open(path, "r", encoding='utf8') as file:
         return json.load(file)
+
+#create GET endpoint to retrieve timeline posts by create_at descending
+@app.route('/api/timeline_post', methods=['GET'])
+def get_time_line_post():
+    return {
+        'timeline_posts': [
+            model_to_dict(p)
+            for p in
+            TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
+
+#add POST route for timeline post, DELETE attempt 2
+@app.route('/api/timeline_post', methods=['POST']) #'DELETE'])
+# if request.method =='POST':
+def post_time_line_post():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    content = request.form.get('content')
+
+    error_message = ""
+
+    if name == None or name == "": 
+        error_message += "Invalid name\n"
+    
+    if email == None or email == "" or (not ("@" in email and ".com" in email)): 
+        error_message += "Invalid email\n"
+    
+    if content == None or content == "": 
+        error_message += "Invalid content\n"
+
+    if error_message != "": 
+        return error_message, 400
+    
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+    return model_to_dict(timeline_post)
+# elif request.method =='DELETE':
+#     def delete_time_line_post():
+#         nid = request.form['id']
+#         obj=TimelinePost.get(TimelinePost.id==nid)
+#         obj.delete_instance()
+
+#         return "Done"
+
+# DELETE attempt 3
+# @app.route('/api/timeline_post', methods=['DELETE'])
+# def delete_time_line_post():
+    # nid = request.form['id']
+    # obj=TimelinePost.get(TimelinePost.id==nid)
+    # obj.delete_instance()
+
+    # return "Done"
+
+# Delete attempt 1
+@app.route('/api/timeline_post/<int:nid>', methods=['DELETE'])
+def delete_time_line_post(nid):
+    try:
+        obj=TimelinePost.get(TimelinePost.id==nid)
+        obj.delete_instance()
+        return get_time_line_post()
+        # return "Done"
+    except TypeError:
+        from traceback import format_exec
+        print(format_exec())
+    # print("deleted result")

@@ -1,0 +1,46 @@
+{
+    "portfolio": {
+        "color": "strace",
+        "name": "MLH Portfolio",
+        "about": "This is a reusable, responsive portfolio template which can be easily adapted to any number of team members.",
+        "client": "MLH Fellowship Hackathon (Winner)",
+        "partners": "Emily Lim, Juan Escalada, Emilie Zhang",
+        "tech": "Jinja, Flask, Python, Json, JS, HTML, CSS",
+        "date": "06.06.2022",
+        "pic": "",
+        "links": "https://github.com/MLH-Fellowship/project-team-pythonic"
+    },
+    "strace": {
+        "color": "strace",
+        "name": "Strace",
+        "about": "Designed a version of the linux strace command in xV6 as an Operating Systems project in C and supported commands such as strace run, strace dump, and flags.",
+        "client": "Intro to Operating Systems (NYU)",
+        "partners": "Malini Pathakota",
+        "tech": "C, Linux, Circular Buffer",
+        "date":"05.15.2022",
+        "pic": "",
+        "links": "https://github.com/Hgersten-hash/Strace"
+    },
+    "qa": {
+        "color": "qa",
+        "name": "QA-Forum",
+        "about": "Q&A Forum written primarily in PHP and HTML (using the Bootstrap library) to support a local relational database",
+        "client": "Intro to DBMS (NYU)",
+        "partners": "David Glaser",
+        "tech": "PHP, PHPMyAdmin, MySQL",
+        "date":"05.15.2022",
+        "pic": "",
+        "links": "https://github.com/Hgersten-hash/QAForum"
+    },
+    "weather": {
+        "color": "weather",
+        "name": "MyAwesomeWeatherApp",
+        "about": "Designed a weather app in Vanilla Javascript that implements the OpenWeather API, Geolocation, and AJAX to display the current weather in any city. ",
+        "client": "SheCodes+Workshop",
+        "partners": "Worked Alone",
+        "tech": "JavaScript, HTML, CSS",
+        "date":"03.21.2021",
+        "pic": "",
+        "links": "https://github.com/Hgersten-hash/MyAwesomeWeatherApp"
+    }
+}

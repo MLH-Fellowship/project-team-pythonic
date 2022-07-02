@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/styles/projects.css" />
+    <title>Projects</title>
+  </head>
+  <body>
+      <header class = "header">
+        <!-- Navbar -->
+        <div id="menu" onclick="menuOnClick()">
+        <div id="menu-bar">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </div>
+        <nav class="nav" id="nav">
+          <ul>
+            <li>
+              <a href="/"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  fill="currentColor"
+                  class="bi bi-house-door"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"
+                  /></svg
+              ></a>
+            </li>
+            <li><a href="/profile/hanna">About me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/projects">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Navbar Popup Background -->
+    <div class="menu-bg" id="menu-bg"></div>
+
+    <!-- Main Container -->
+    <div class="container" style="margin:0">
+      <!-- Upper Container -->
+      <div class="row mb-5">
+        <!-- Navbar -->
+
+        <!-- Background image -->
+                <h1 class="mb-3" style="font-size: 75px; margin-top: 125px; text-align: center; color:white;">My Projects</h1>
+                
+          </div>
+        </div>
+        <!-- Background image -->
+      </header>
+    <div class="container">
+      <br />
+      <br />
+      <div class="row list-project">
+        <div class="col-md-7">
+          <div class="embed-responsive embed-responsive-21by9" style="margin-top: 0;">
+            <iframe class="embed-responsive-item" src="../static/vid/mlhportfolio.mp4" allowfullscreen autoplay="false"></iframe>
+            </div>
+        </div>
+        <!-- / column -->
+        <div class="col-md-5">
+          <div class="project-info-box mt-0">
+            <h5 class="portfolio-website">{{info1['name']}}</h5>
+            <p>
+              {{info1['about']}}
+            </p>
+          </div>
+          <!-- / project-info-box -->
+
+          <div class="project-info-box mb-10">
+            <p><b>Made For: </b>{{info1['client']}}</p>
+            <p><b>Date:</b> {{info1['date']}}</p>
+            <p><b>Partners:</b> {{info1['partners']}}</p>
+            <p><b>Tech:</b> {{info1['tech']}}</p>
+          </div>
+          <!-- / project-info-box -->
+
+          <a href="{{info1['links']}}" target="_blank" class="btn btn-primary d-block" style="margin-bottom: 10px;">VIEW Code</a>
+        </div>
+        <!-- / column -->
+      </div>
+      <!-- / row list-project -->
+
+      <div class="spacer-line-fw border-secondary opc-25 mt-30 mb-30">
+        &nbsp;
+      </div>
+
+      <div class="row list-project">
+        <div class="col-md-5 tablet-top">
+          <div class="project-info-box mt-0">
+            <h5>{{info2['name']}}</h5>
+            <p>
+              {{info2['about']}}
+            </p>
+          </div>
+          <!-- / project-info-box -->
+
+          <div class="project-info-box mb-10">
+            <p><b>Made For: </b>{{info2['client']}}</p>
+            <p><b>Date:</b> {{info2['date']}}</p>
+            <p><b>Partners:</b> {{info2['partners']}}</p>
+            <p><b>Tech:</b> {{info2['tech']}}</p>
+          </div>
+          <!-- / project-info-box -->
+
+          <a href="{{info2['links']}}" target="_blank" class="btn btn-primary d-block" style="margin-bottom: 10px;">VIEW Code</a>
+        </div>
+        <!-- / column -->
+
+        <div class="col-md-7">
+          <div class="embed-responsive embed-responsive-21by9" style="margin-top: 0;">
+            <iframe class="embed-responsive-item" src="../static/vid/strace.mp4" allowfullscreen autoplay="false"></iframe>
+            </div>
+        </div>
+        <!-- / column -->
+      </div>
+      <!-- / row list-project -->
+
+      <div class="spacer-line-fw border-secondary opc-25 mt-30 mb-30">
+        &nbsp;
+      </div>
+
+      <div class="row list-project">
+        <div class="col-md-7">
+          <div class="embed-responsive embed-responsive-21by9" style="margin-top: 0;">
+            <iframe class="embed-responsive-item" src="../static/vid/qa.mp4" allowfullscreen autoplay="false"></iframe>
+            </div>
+        </div>
+        <!-- / column -->
+        <div class="col-md-5">
+          <div class="project-info-box mt-0">
+            <h5>{{info3['name']}}</h5>
+            <p>
+              {{info3['about']}}
+            </p>
+          </div>
+          <!-- / project-info-box -->
+
+          <div class="project-info-box mb-10">
+            <p><b>Made For: </b>{{info3['client']}}</p>
+            <p><b>Date:</b> {{info3['date']}}</p>
+            <p><b>Partners:</b> {{info3['partners']}}</p>
+            <p><b>Tech:</b> {{info3['tech']}}</p>
+          </div>
+          <!-- / project-info-box -->
+
+          <a href="{{info3['links']}}" target="_blank" class="btn btn-primary d-block" style="margin-bottom: 10px;">VIEW Code</a>
+        </div>
+        <!-- / column -->
+      </div>
+      <!-- / row list-project -->
+      <div class="spacer-line-fw border-secondary opc-25 mt-30 mb-30">
+        &nbsp;
+      </div>
+
+      <div class="row list-project">
+        <div class="col-md-5 tablet-top">
+          <div class="project-info-box mt-0">
+            <h5>{{info4['name']}}</h5>
+            <p>
+              {{info4['about']}}
+            </p>
+          </div>
+          <!-- / project-info-box -->
+
+          <div class="project-info-box mb-10">
+            <p><b>Made For: </b>{{info4['client']}}</p>
+            <p><b>Date:</b> {{info4['date']}}</p>
+            <p><b>Partners:</b> {{info4['partners']}}</p>
+            <p><b>Tech:</b> {{info4['tech']}}</p>
+          </div>
+          <!-- / project-info-box -->
+
+          <a href="{{info4['links']}}" target="_blank" class="btn btn-primary d-block" style="margin-bottom: 10px;">VIEW Code</a>
+        </div>
+        <!-- / column -->
+        <div class="col-md-7">
+        <div class="embed-responsive embed-responsive-21by9" style="margin-top: 0;">
+            <iframe class="embed-responsive-item" src="../static/vid/weatherm.mp4" allowfullscreen autoplay="false"></iframe>
+            </div>
+        </div>
+        <!-- / column -->
+      </div>
+      <!-- / row list-project -->
+      <div class="spacer-line-fw border-secondary opc-25 mt-30 mb-30">
+        &nbsp;
+      </div>
+    </div>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../static/scripts/projects.js"></script>
+  </body>
+</html>
