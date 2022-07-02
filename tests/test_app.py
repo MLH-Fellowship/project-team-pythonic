@@ -14,9 +14,9 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         assert "<title>Team Pythonic</title>" in html 
         
-        assert "<div class=\"hero_header\">" in html 
-        assert "<h1 id=\"herofont\"><span id=\"pythonic_color\">Hanna </span>Gersten</h1>" in html 
-        assert "<h2 id=\"herosubfont\">Aspiring Software Engineer</h2>" in html 
+        assert "<a href=\"/contact\">" in html
+        assert "<a href=\"/projects\">" in html
+        assert "<a href=\"/resume\">" in html  
         
     
     def test_timeline(self): 
