@@ -1,0 +1,29 @@
+version: "3" # docker compose file version
+services:
+  myportfolio:
+    container_name: myportfolio
+    build: . # build from Dockerfile at current dir
+    restart: always # on reboot or error
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=development
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/myportfolio # for development only
+    depends_on:
+      - mysql # service starts up after mysql service is up
+
+  mysql:
+    container_name: mysql
+    image: mariadb # for lower resource image
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - mydatabase:/var/lib/mysql # continues even if container recreated
+    command: ["--wait_timeout=28800"]
+
+volumes:
+  mydatabase:
