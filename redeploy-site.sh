@@ -8,12 +8,8 @@ cd /root/mlh-fellowship-portfolio
 # make sure git repository has the latest changes from main
 git fetch && git reset origin/main --hard
 
-# enter Python virtual environment
-source python3-virtualenv/bin/activate
+# spin containers down to prevent out of memory issues
+docker compose -f docker-compose.prod.yml down
 
-# install Python dependencies
-pip install -r requirements.txt
-
-# restart myportfolio service
-systemctl daemon-reload
-systemctl restart myportfolio
+# spin containers up for Flask app and database
+docker compose -f docker-compose.prod.yml up -d --build
