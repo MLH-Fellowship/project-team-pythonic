@@ -1,13 +1,11 @@
 version: "3" # docker compose file version
-services:
+services: # each is a container
   myportfolio:
     container_name: myportfolio
     build: . # build from Dockerfile at current dir
     restart: always # on reboot or error
     env_file:
       - .env
-    ports:
-      - "5000:5000"
     depends_on:
       - mysql # service starts up after mysql service is up
 
@@ -20,5 +18,21 @@ services:
     volumes:
       - mydatabase:/var/lib/mysql # continues even if container recreated
 
-volumes:
+  nginx:
+    container_name: nginx
+    image: jonasal/nginx-certbot
+    restart: always
+    environment: # environment variable to generate certificates
+      - CERTBOT_EMAIL=name@example.com
+    ports: # bind ports to the internet
+      - 80:80 # HTTP
+      - 443:443 # HTTPS
+    volumes:
+      - nginx_secrets:/etc/letsencrypt # store generated certificate files so they're not lost upon restart
+      - ./user_conf.d:/etc/nginx/user_conf.d # map nginx configuration files under the directory "user_conf.d" into container
+    depends_on:
+      - myportfolio
+
+volumes: # define volume names
   mydatabase:
+  nginx_secrets:
