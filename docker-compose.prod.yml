@@ -23,7 +23,7 @@ services: # each is a container
     image: jonasal/nginx-certbot
     restart: always
     environment: # environment variable to generate certificates
-      - CERTBOT_EMAIL=name@example.com
+      - CERTBOT_EMAIL=emily.lim@wsu.edu
     ports: # bind ports to the internet
       - 80:80 # HTTP
       - 443:443 # HTTPS
