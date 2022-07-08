@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
+from flask import Response
+import re
 
 load_dotenv()  # Loads the environment variables from the .env file
 
@@ -127,27 +129,35 @@ def get_time_line_post():
 @app.route('/api/timeline_post', methods=['POST']) #'DELETE'])
 # if request.method =='POST':
 def post_time_line_post():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    content = request.form.get('content')
-
-    error_message = ""
-
-    if name == None or name == "": 
-        error_message += "Invalid name\n"
-    
-    if email == None or email == "" or (not ("@" in email and ".com" in email)): 
-        error_message += "Invalid email\n"
-    
-    if content == None or content == "": 
-        error_message += "Invalid content\n"
-
-    if error_message != "": 
-        return error_message, 400
-    
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
-
-    return model_to_dict(timeline_post)
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    try:
+        name = request.form['name']
+        email = request.form['email']
+        content = request.form['content'] 
+        if content == "":
+            return Response(
+            "Invalid content",
+            status=400,
+            )
+        elif name == "":
+            return Response(
+            "Invalid name",
+            status=400,
+            )
+        else:
+            if(re.fullmatch(regex, email)):
+                timeline_post = TimelinePost.create(name=name, email=email, content=content)
+                return model_to_dict(timeline_post)
+            else:
+                return Response(
+                "Invalid email",
+                status=400,
+                )
+    except:
+	    return Response(
+        "Invalid name",
+        status=400,
+    )
 # elif request.method =='DELETE':
 #     def delete_time_line_post():
 #         nid = request.form['id']
