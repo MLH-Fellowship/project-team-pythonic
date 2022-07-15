@@ -47,9 +47,9 @@ form.addEventListener('submit', function(e) {
     method: 'POST',
     body: data,
     }).catch(error => {
-        console.log(error);
+        alert(error);
     });
-    // location.reload();
+    location.reload();
 })
 
 // var mainContainer = document.getElementById('timeline-posts');
