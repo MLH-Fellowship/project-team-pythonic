@@ -89,7 +89,7 @@ def resume():
 
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html', title="Timeline")
+    return render_template('timeline.html', title="Timeline") 
 
 # Route for handling 404 errors
 @app.errorhandler(404)

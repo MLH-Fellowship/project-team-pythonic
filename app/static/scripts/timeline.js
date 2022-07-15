@@ -46,8 +46,10 @@ form.addEventListener('submit', function(e) {
     fetch('../api/timeline_post', {
     method: 'POST',
     body: data,
-    })
-    location.reload();
+    }).catch(error => {
+        console.log(error);
+    });
+    // location.reload();
 })
 
 // var mainContainer = document.getElementById('timeline-posts');
