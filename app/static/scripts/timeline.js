@@ -46,7 +46,7 @@ form.addEventListener('submit', function(e) {
     fetch('../api/timeline_post', {
     method: 'POST',
     body: data,
-    }).catch(error => {
+    }).catch((e) => {
         alert("Sorry! Only one post per minute! Please wait :)");
     });
     document.getElementById("user_name").value = '';
