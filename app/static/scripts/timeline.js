@@ -49,7 +49,9 @@ form.addEventListener('submit', function(e) {
     }).catch(error => {
         alert(error);
     });
-    location.reload();
+    document.getElementById("user_name").value = '';
+    document.getElementById("user_email").value = '';
+    document.getElementById("user_content").value = '';
 })
 
 // var mainContainer = document.getElementById('timeline-posts');
