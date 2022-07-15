@@ -47,7 +47,7 @@ form.addEventListener('submit', function(e) {
     method: 'POST',
     body: data,
     }).catch(error => {
-        alert(error);
+        alert("Sorry! Only one post per minute! Please wait :)");
     });
     document.getElementById("user_name").value = '';
     document.getElementById("user_email").value = '';
