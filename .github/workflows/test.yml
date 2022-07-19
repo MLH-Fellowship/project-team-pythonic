@@ -22,12 +22,12 @@ jobs: # create a job called Run Tests
           python-version: '3.10.4'
 
       - name: Setup Python Virtual Environment
-        run: python -m venv python3-virtualenv
+        run: python3 -m venv python3-virtualenv
 
       - name: Install Dependencies
         run: python3-virtualenv/bin/pip install -r requirements.txt
 
       - name: Run Tests
         run: |
-          chmod +x ../../run_test.sh
-          ../../run_test.sh
+          chmod +x run_test.sh
+          ./run_test.sh
