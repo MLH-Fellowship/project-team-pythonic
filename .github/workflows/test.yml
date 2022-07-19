@@ -29,5 +29,5 @@ jobs: # create a job called Run Tests
 
       - name: Run Tests
         run: |
-          chmod +x run_test.sh
-          ./run_test.sh
+          chmod +x ../../run_test.sh
+          ../../run_test.sh
